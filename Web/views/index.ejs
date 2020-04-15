@@ -12,10 +12,19 @@
     <script src="/js/babel.min.js"></script>
 
     <button id="btnGen">click here!</button>
+    
+    <script src="/socket.io/socket.io.js"></script>
     <script>
-        document.getElementById('btnGen').addEventListener('click', function(){
-            console.log('clicked!')
+        let socket = io();
+        socket.on("otherEvent", function(msg){
+            console.log("msg:", msg);
         });
+        document.getElementById('btnGen').addEventListener('click', function(){
+            socket.emit('randomEvent','clicked!');
+        });
+        
     </script>
+
+
 </body>
 </html>

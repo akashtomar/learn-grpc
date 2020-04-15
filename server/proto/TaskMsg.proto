@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package createfile;
+
+message CreateFileRequest {
+    string fileName = 1;
+    string content = 2;
+}
+
+message CreateFileReply {
+    string message = 1;
+}
+
+
+
+service FileCreater {
+    rpc CreateFile (CreateFileRequest) returns (CreateFileReply) {}
+}
