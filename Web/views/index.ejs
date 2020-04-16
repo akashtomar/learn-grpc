@@ -16,7 +16,7 @@
     <script src="/socket.io/socket.io.js"></script>
     <script>
         let socket = io();
-        socket.on("otherEvent", function(msg){
+        socket.on('otherEvent', function(msg){
             console.log("msg:", msg);
         });
         document.getElementById('btnGen').addEventListener('click', function(){

@@ -1,12 +1,20 @@
 /**
  * code to handle all the socket events
  */
+const myEmitter = require('./myEmitter');
+
 
 
 module.exports = function(socket){
-    socket.on('randomEvent', (msg)=>{
-        console.log(msg);     
+    myEmitter.on('someServerEvent', (msg)=>{
+        console.log('inside emit on', msg); 
+        socket.emit('otherEvent', msg);
     });
-    socket.emit('otherEvent', socket.id);
+    
+    socket.on('randomEvent', (msg)=>{
+        myEmitter.emit('someServerEvent', msg);
+        //console.log(msg);     
+    });
+    
 
 }
