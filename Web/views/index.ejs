@@ -16,11 +16,11 @@
     <script src="/socket.io/socket.io.js"></script>
     <script>
         let socket = io();
-        socket.on('otherEvent', function(msg){
+        socket.on('ackFile', function(msg){
             console.log("msg:", msg);
         });
         document.getElementById('btnGen').addEventListener('click', function(){
-            socket.emit('randomEvent','clicked!');
+            socket.emit('createFile','clicked!');
         });
         
     </script>

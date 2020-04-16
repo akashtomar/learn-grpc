@@ -9,9 +9,11 @@
   "author": "akash tomar",
   "license": "MIT",
   "dependencies": {
+    "@grpc/proto-loader": "^0.5.4",
     "dotenv": "^8.2.0",
     "ejs": "^3.0.2",
     "express": "^4.17.1",
+    "grpc": "^1.24.2",
     "socket.io": "^2.3.0"
   }
 }
